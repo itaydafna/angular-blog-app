@@ -1,25 +1,30 @@
 (function () {
 	// Your app starts here
-    var app = angular.module('blogApp', ['ngRoute', 'ngSanitize']);
+    var app = angular.module('blogApp', ['ngRoute', 'ngSanitize'])
 
-    app.config(function ($routeProvider) {
-
+    .config(['$routeProvider',function($routeProvider){
         // Setup routes logic
         $routeProvider
             .when('/', {
-                redirectTo: '/posts'
+                redirectTo: 'posts'
             })
             .when('/posts/:page?', {
                 templateUrl: 'app/posts/posts.view.html',
                 controller: 'PostsCtrl',
-                activeTab: 'posts',
-                resolve: {
-                    postsData: function (dataService) {
-                        return dataService.get();
-                    }
-                }
+                activeTab: 'posts'
+                // resolve: {
+                //     postsData: function (dataService) {
+                //         return dataService.get();
+                //     }
+                // }
             })
-    });
+            .when('/admin',{
+                templateUrl: 'app/admin/admin.view.html',
+                controller: 'AdminCtrl',
+                activeTab: 'admin'
+            })
+    }]);
+
 }());
 
 

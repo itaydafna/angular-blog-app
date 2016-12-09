@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="blogApp">
 
 <head>
 	<meta charset="utf-8">
@@ -25,38 +25,7 @@
 
 <body>
 	<!-- Navigation -->
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-
-		<div class="container">
-
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#/">Netcraft Academy</a>
-			</div>
-
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="active">
-						<a href="#/posts">Posts</a>
-					</li>
-					<li>
-						<a href="#/admin">Admin</a>
-					</li>
-				</ul>
-			</div>
-			<!-- /.navbar-collapse -->
-
-		</div>
-		<!-- /.container -->
-	</nav>
+	<ng-include src="'app/layout/nav.view.html'"></ng-include>
 
 	<!-- Page Content -->
 	<div class="container">
@@ -64,7 +33,7 @@
 		<div class="row">
 
 			<!-- Dynamic Content Here -->
-
+			<ng-view></ng-view>
 
 			<!-- Blog Sidebar Widgets Column -->
 			<aside class="col-md-4">
@@ -190,6 +159,19 @@
 
 	<!-- App -->
 	<script src="app/app.module.js"></script>
+
+	<!-- Layout -->
+	<script src="app/layout/nav.controller.js"></script>
+
+	<!-- Common -->
+	<script src="app/common/app-states.service.js"></script>
+
+	<!-- Posts Tab -->
+	<script src="app/posts/posts.controller.js"></script>
+
+	<!-- Admin Tab -->
+	<script src="app/admin/admin.controller.js"></script>
+
 
 </body>
 </html>
