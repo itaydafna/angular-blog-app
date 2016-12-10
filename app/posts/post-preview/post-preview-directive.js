@@ -12,12 +12,7 @@
                 date: '@',
                 tags:'='
             }
-            // controller: postPreviewController,
-            // controllerAs: "vm"
         };
 
-        // function classifiedCardController($state, $scope, $mdDialog) {
-        //
-        // }
     })
 }());

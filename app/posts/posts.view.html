@@ -5,7 +5,7 @@
     <h2 class="page-header">Showing {{posts.length}} posts</h2>
 
     <!-- Begin Post -->
-    <post-preview ng-repeat="post in posts"
+    <post-preview ng-repeat="post in posts |limitPosts: limit : pageNum"
                   title="{{post.title}}"
                   author="{{post.author}}"
                   description="{{post.description}}"
