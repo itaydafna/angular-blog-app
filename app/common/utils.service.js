@@ -3,7 +3,7 @@
 
     var app = angular.module('blogApp');
 
-    app.factory('utils', function ($log, $q, $http) {
+    app.factory('utils', function ($log, $q, $http,$location) {
         $log.debug('dataService');
 
         return {
@@ -27,6 +27,20 @@
             cleanTitleLower: function (title) {
                 return title && this.cleanTitle(title).toLowerCase();
             },
+
+            /**
+             * Get the Query Params of a URL as a string
+             *
+             * @return {string|null} Query Params
+             */
+            getQueryUrl: function(){
+                var url = $location.url();
+                if (url.indexOf('?') > -1) {
+                    return url.slice(url.indexOf('?'));
+                }
+
+                return null;
+            }
 
         }
 

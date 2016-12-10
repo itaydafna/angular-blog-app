@@ -16,10 +16,10 @@
     <!-- Pager -->
     <ul class="pager">
       <li class="previous" ng-hide="pageNum*limit>=posts.length">
-        <a href="#/posts/{{pageNum+1}}">&larr; Older</a>
+        <a href="#/posts/{{pageNum+1}}{{queryParams}}">&larr; Older</a>
       </li>
       <li class="next" ng-hide="pageNum<=1">
-        <a href="#/posts/{{pageNum-1}}">Newer &rarr;</a>
+        <a href="#/posts/{{pageNum-1}}{{queryParams}}">Newer &rarr;</a>
       </li>
     </ul>
   </section>

@@ -19,6 +19,7 @@
                     }
                 }
             })
+            
             .when('/admin',{
                 templateUrl: 'app/admin/admin.view.html',
                 controller: 'AdminCtrl',

@@ -31,6 +31,10 @@
     //Set helpers
             $scope.utils = utils;
 
+     //get query params
+
+            $scope.queryParams = utils.getQueryUrl();
+
     /**
      * Preapre the posts data
      */
