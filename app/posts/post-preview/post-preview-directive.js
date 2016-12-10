@@ -10,7 +10,8 @@
                 author: '@',
                 description:'@',
                 date: '@',
-                tags:'='
+                tags:'=',
+                utils:'='
             }
         };
 

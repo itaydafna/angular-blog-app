@@ -8,8 +8,8 @@
      */
 
 
-    app.controller('PostsCtrl',['$scope','$routeParams','$log','$route','$filter','appStates','postsData',
-        function($scope,$routeParams,$log,$route,$filter,appStates,postsData){
+    app.controller('PostsCtrl',['$scope','$routeParams','$log','$route','$filter','appStates','postsData','utils',
+        function($scope,$routeParams,$log,$route,$filter,appStates,postsData,utils){
             $log.debug('PostsCtrl');
 
             var posts,
@@ -28,6 +28,9 @@
             $scope.limit = limit;
             $scope.pageNum = pageNum;
 
+    //Set helpers
+            $scope.utils = utils;
+
     /**
      * Preapre the posts data
      */
@@ -35,8 +38,6 @@
         posts = $filter('orderBy')(postsData.posts, '-date');
 
         $scope.posts = posts;
-        console.log($scope.posts);
-
 
         }]
     );

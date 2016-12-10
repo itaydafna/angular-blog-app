@@ -1,12 +1,12 @@
 <article>
   <header>
     <h2>
-      <a href="#">{{title}}</a>
+      <a href="#/post/{{utils.cleanTitle(title)}}">{{title}}</a>
     </h2>
 
     <p>
       <small class="glyphicon glyphicon-user"></small>
-      by <a href="#">{{author}}</a>
+      by <a href="#/posts?author={{utils.cleanTitleLower(author)}}">{{author}}</a>
     </p>
     <p>
       <small class="glyphicon glyphicon-time"></small>
@@ -22,11 +22,11 @@
     <p class="pull-left">
       <b>Tags:&nbsp;</b>
       <span ng-repeat="tag in tags">
-            <a href="#" class="label label-default">{{tag}}</a>
+            <a href="#/posts?category={{utils.cleanTitleLower(tag)}}" class="label label-default">{{tag}}</a>
           </span>
     </p>
 
-    <a class="btn btn-primary pull-right" href="#">
+    <a class="btn btn-primary pull-right" href="post/{{utils.cleanTitle(title)}}">
       Read More <i class="glyphicon glyphicon-chevron-right"></i>
     </a>
   </footer>
