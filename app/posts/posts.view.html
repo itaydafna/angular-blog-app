@@ -2,38 +2,35 @@
 
   <!-- Blog Entries Column -->
   <section class="col-md-8">
-    <h2 class="page-header">Showing 8 posts</h2>
+    <h2 class="page-header">Showing {{posts.length}} posts</h2>
 
     <!-- Begin Post -->
-    <article>
+    <article ng-repeat="post in posts">
       <header>
         <h2>
-          <a href="#">AngularJS - Controllers</a>
+          <a href="#">{{post.title}}</a>
         </h2>
 
         <p>
           <small class="glyphicon glyphicon-user"></small>
-          by <a href="#">Ilan Cohen</a>
+          by <a href="#">{{post.author}}</a>
         </p>
         <p>
           <small class="glyphicon glyphicon-time"></small>
-          Posted on 14 Jan, 2015
+          Posted on {{post.date | date: "d MMM, yyyy"}}
         </p>
       </header>
 
       <!-- Post Description -->
-      <p>In Angular, a Controller is a JavaScript constructor function that is used to augment the Angular Scope. When a Controller is attached to the DOM via the ng-controller directive, Angular will instantiate a new Controller object, using the specified Controller's constructor function. A new child scope will be available as an injectable parameter to the Controller's constructor function as $scope.</p>
+      <p>{{post.description}}</p>
       <br>
 
       <footer class="clearfix">
         <p class="pull-left">
           <b>Tags:&nbsp;</b>
-          <span>
-								<a href="#" class="label label-default">JavaScript</a>
-							</span>
-          <span>
-								<a href="#" class="label label-default">AngularJS</a>
-							</span>
+          <span ng-repeat="tag in post.tags">
+            <a href="#" class="label label-default">{{tag}}</a>
+          </span>
         </p>
 
         <a class="btn btn-primary pull-right" href="#">
@@ -44,86 +41,6 @@
     </article>
     <!-- End of Post -->
 
-    <!-- Begin Post -->
-    <article>
-      <header>
-        <h2>
-          <a href="#">Grunt - Custom Tasks</a>
-        </h2>
-
-        <p>
-          <small class="glyphicon glyphicon-user"></small>
-          by <a href="#">Alex Ilyaev</a>
-        </p>
-        <p>
-          <small class="glyphicon glyphicon-time"></small>
-          Posted on 10 Dec, 2014
-        </p>
-      </header>
-      <hr>
-
-      <!-- Post Description -->
-      <p>Tasks are grunt's bread and butter. The stuff you do most often, like jshint or nodeunit. Every time Grunt is run, you specify one or more tasks to run, which tells Grunt what you'd like it to do. You can go crazy with tasks. If your tasks don't follow the 'multi task' structure, use a custom task.</p>
-      <br>
-
-      <footer class="clearfix">
-        <p class="pull-left">
-          <b>Tags:&nbsp;</b>
-          <span>
-								<a href="#" class="label label-default">Grunt</a>
-							</span>
-          <span>
-								<a href="#" class="label label-default">Tools</a>
-							</span>
-        </p>
-
-        <a class="btn btn-primary pull-right" href="#">
-          Read More <i class="glyphicon glyphicon-chevron-right"></i>
-        </a>
-      </footer>
-      <hr>
-    </article>
-    <!-- End of Post -->
-
-    <!-- Begin Post -->
-    <article>
-      <header>
-        <h2>
-          <a href="#">jQuery - Events, AJAX</a>
-        </h2>
-
-        <p>
-          <small class="glyphicon glyphicon-user"></small>
-          by <a href="#">Amit Choukroun</a>
-        </p>
-        <p>
-          <small class="glyphicon glyphicon-time"></small>
-          Posted on 3 Dec, 2014
-        </p>
-      </header>
-
-      <!-- Post Description -->
-      <p>jQuery Event methods trigger or attach a function to an event handler for the selected elements. These methods are used to register behaviors to take effect when the user interacts with the browser, and to further manipulate those registered behaviors.</p>
-      <br>
-
-      <footer class="clearfix">
-        <p class="pull-left">
-          <b>Tags:&nbsp;</b>
-          <span>
-								<a href="#" class="label label-default">JavaScript</a>
-							</span>
-          <span>
-								<a href="#" class="label label-default">jQuery</a>
-							</span>
-        </p>
-
-        <a class="btn btn-primary pull-right" href="#">
-          Read More <i class="glyphicon glyphicon-chevron-right"></i>
-        </a>
-      </footer>
-      <hr>
-    </article>
-    <!-- End of Post -->
 
     <!-- Pager -->
     <ul class="pager">

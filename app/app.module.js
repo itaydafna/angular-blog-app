@@ -11,12 +11,13 @@
             .when('/posts/:page?', {
                 templateUrl: 'app/posts/posts.view.html',
                 controller: 'PostsCtrl',
-                activeTab: 'posts'
-                // resolve: {
-                //     postsData: function (dataService) {
-                //         return dataService.get();
-                //     }
-                // }
+                activeTab: 'posts',
+                //I need an explanation on how this works..
+                resolve: {
+                    postsData: function (dataService) {
+                        return dataService.get();
+                    }
+                }
             })
             .when('/admin',{
                 templateUrl: 'app/admin/admin.view.html',

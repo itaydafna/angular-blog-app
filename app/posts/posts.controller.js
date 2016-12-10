@@ -3,12 +3,40 @@
 
     var app = angular.module('blogApp');
 
-    app.controller('PostsCtrl',['$scope','$routeParams','$log','$route','appStates',
-        function($scope,$routeParams,$log,$route,appStates){
-            $log.debug('PostsCtrl')
-            console.log();
+    /**
+     * Handle posts list
+     */
+
+
+    app.controller('PostsCtrl',['$scope','$routeParams','$log','$route','$filter','appStates','postsData',
+        function($scope,$routeParams,$log,$route,$filter,appStates,postsData){
+            $log.debug('PostsCtrl');
+
+            var posts,
+                // Limit number of visible posts
+                limit = 3,
+                // Get the page number
+                pageNum = parseInt($routeParams.page, 10) || 1;
+
+    /**
+     * Setup
+     */
+
+    // Sets the active Nav item
             appStates.nav.activeTab = $route.current.activeTab;
-            console.log(appStates);
+
+            $scope.limit = limit;
+            $scope.pageNum = pageNum;
+
+    /**
+     * Preapre the posts data
+     */
+
+        posts = $filter('orderBy')(postsData.posts, '-date');
+
+        $scope.posts = posts;
+        console.log($scope.posts);
+
 
         }]
     );

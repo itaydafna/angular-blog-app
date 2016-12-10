@@ -3,7 +3,7 @@
 
     var app = angular.module('blogApp');
 
-    app.factory('dataService',function($log,$q,$http,utils){
+    app.factory('dataService',function($log,$q,$http){
         $log.debug('dataService');
 
         var dataCache = {},
