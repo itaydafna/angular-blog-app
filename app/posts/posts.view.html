@@ -14,10 +14,10 @@
     </post-preview>
     <!-- Pager -->
     <ul class="pager">
-      <li class="previous">
+      <li class="previous" ng-hide="pageNum*limit>=posts.length">
         <a href="#/posts/{{pageNum+1}}">&larr; Older</a>
       </li>
-      <li class="next">
+      <li class="next" ng-hide="pageNum<=1">
         <a href="#/posts/{{pageNum-1}}">Newer &rarr;</a>
       </li>
     </ul>
